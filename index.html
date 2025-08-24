@@ -3,78 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>श्री प्रभात माध्यमिक विद्यालय</title>
+    <title>प्रभात माध्यमिक विद्यालय</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* बेसिक रिसेट र स्टाइल */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', 'Mukta', 'Noto Sans Devanagari', sans-serif;
+            font-family: 'Kalpurush', 'Arial', sans-serif;
         }
         
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #f59e0b;
+            --light: #f3f4f6;
+            --dark: #1f2937;
         }
         
         body {
+            background-color: #f8fafc;
+            color: #334155;
             line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
         }
         
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            color: #1a5276;
+        /* Header Styles */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 8px 0;
         }
         
-        p {
-            margin-bottom: 1rem;
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            font-size: 14px;
         }
         
-        img {
-            max-width: 100%;
-            height: auto;
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 16px;
+        }
+        
+        .main-header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px 5%;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .school-name {
+            color: var(--primary);
+        }
+        
+        .school-name h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        
+        .school-name p {
+            font-size: 14px;
+            color: var(--dark);
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--secondary);
+            padding: 0 5%;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
             display: block;
+            font-weight: 500;
+            transition: background 0.3s;
         }
         
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 500px;
+            background: linear-gradient(rgba(30, 58, 138, 0.7), rgba(30, 58, 138, 0.7)), url('https://raw.githubusercontent.com/Mr-Prabhat/school/main/image.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .hero-content h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
         }
         
         .btn {
             display: inline-block;
-            background: #1a5276;
+            background: var(--secondary);
             color: white;
-            padding: 12px 24px;
+            padding: 12px 25px;
             border-radius: 5px;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
         }
         
         .btn:hover {
-            background: #1e6da5;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: #e69008;
+            transform: translateY(-2px);
         }
         
-        section {
-            padding: 5rem 0;
+        /* Notice Section */
+        .notice-section {
+            padding: 50px 5%;
+            background: white;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: var(--primary);
             position: relative;
             padding-bottom: 15px;
         }
@@ -86,657 +184,337 @@
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
-            height: 4px;
-            background: #1a5276;
-            border-radius: 2px;
+            height: 3px;
+            background: var(--secondary);
         }
         
-        /* नेभिगेशन बार */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        nav {
+        .notice-container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1a5276;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
+        .notice-board {
+            flex: 1;
+            background: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .logo img {
-            height: 50px;
-            margin-right: 10px;
+        .notice-board h3 {
+            color: var(--primary);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--secondary);
         }
         
-        .nav-links {
-            display: flex;
+        .notice-list {
             list-style: none;
         }
         
-        .nav-links li {
-            margin-left: 2rem;
+        .notice-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #ddd;
         }
         
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: #1a5276;
-        }
-        
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
-        
-        /* हिरो सेक्सन */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://raw.githubusercontent.com/Mr-Prabhat/school/main/image.jpg') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding-top: 80px;
-        }
-        
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-        
-        .hero-content p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: #f8f8f8;
-        }
-        
-        /* About सेक्सन */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .about-text ul {
-            margin-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-text li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .about-image {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Programs सेक्सन */
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .program-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .program-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .program-image {
-            height: 200px;
-            background: #ddd;
-        }
-        
-        .program-info {
-            padding: 1.5rem;
-        }
-        
-        .program-info h3 {
-            color: #1a5276;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Notices सेक्सन */
-        .notices-container {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .notice-item {
-            padding: 1rem 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .notice-item:last-child {
+        .notice-list li:last-child {
             border-bottom: none;
         }
         
-        .notice-date {
-            color: #1a5276;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+        /* Features Section */
+        .features {
+            padding: 50px 5%;
+            background: var(--light);
         }
         
-        /* Gallery सेक्सन */
-        .gallery-grid {
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
-        .gallery-item {
-            border-radius: 10px;
-            overflow: hidden;
-            height: 250px;
-            background: #ddd;
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.03);
-        }
-        
-        /* Contact सेक्सन */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-        
-        .contact-info {
-            background: #1a5276;
-            color: white;
-            padding: 2rem;
-            border-radius: 10px;
-        }
-        
-        .contact-info h3 {
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-details {
-            margin-bottom: 2rem;
-        }
-        
-        .contact-details p {
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .contact-details i {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
+        .feature-card {
             background: white;
-            color: #1a5276;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
         }
         
-        .social-links a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        .feature-card:hover {
+            transform: translateY(-5px);
         }
         
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
+        .feature-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
         }
         
-        .contact-form textarea {
-            min-height: 150px;
-            resize: vertical;
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
         }
         
         /* Footer */
         footer {
-            background: #1a5276;
+            background: var(--dark);
             color: white;
-            padding: 3rem 0 1rem;
+            padding: 50px 5% 20px;
         }
         
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
         }
         
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: white;
+        .footer-section h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
         }
         
-        .footer-links h4 {
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-links ul {
+        .footer-links {
             list-style: none;
         }
         
         .footer-links li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 10px;
         }
         
         .footer-links a {
             color: #ddd;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
         
         .footer-links a:hover {
-            color: white;
+            color: var(--secondary);
+        }
+        
+        .contact-info-footer div {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .copyright {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
         }
         
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .about-content,
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.8rem;
-            }
-            
-            .hero-content p {
-                font-size: 1.2rem;
-            }
-        }
-        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .hamburger {
-                display: block;
+            .top-header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
             }
             
             .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: white;
                 flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: all 0.5s ease;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             }
             
-            .nav-links.active {
-                left: 0;
+            .hero-content h2 {
+                font-size: 32px;
             }
             
-            .nav-links li {
-                margin: 1.5rem 0;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero-content h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero-content p {
-                font-size: 1rem;
-            }
-            
-            .btn {
-                padding: 10px 20px;
-            }
-            
-            section {
-                padding: 3rem 0;
+            .notice-container {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
+    <!-- Header Section -->
     <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">
-                    <span>श्री प्रभात माध्यमिक विद्यालय</span>
-                </a>
-                
-                <ul class="nav-links">
-                    <li><a href="#home">गृहपृष्ठ</a></li>
-                    <li><a href="#about">विद्यालयको बारेमा</a></li>
-                    <li><a href="#programs">कार्यक्रम</a></li>
-                    <li><a href="#notices">सूचना</a></li>
-                    <li><a href="#gallery">ग्यालरी</a></li>
-                    <li><a href="#contact">सम्पर्क</a></li>
-                </ul>
-                
-                <div class="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
+        <div class="top-header">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> ०१-४२१२३४५, ९८५१०२०३०४</span>
+                <span><i class="fas fa-envelope"></i> info@prabhatschool.edu.np</span>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
+        
+        <div class="main-header">
+            <div class="logo-container">
+                <div class="logo">PS</div>
+                <div class="school-name">
+                    <h1>प्रभात माध्यमिक विद्यालय</h1>
+                    <p>काठमाडौं, नेपाल | स्थापना २०४५</p>
+                </div>
+            </div>
+        </div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fas fa-home"></i> गृहपृष्ठ</a></li>
+                <li><a href="#">हाम्रो बारे</a></li>
+                <li><a href="#">शैक्षिक कार्यक्रम</a></li>
+                <li><a href="#">शिक्षकसभा</a></li>
+                <li><a href="#">विद्यार्थी जीवन</a></li>
+                <li><a href="#">ग्यालरी</a></li>
+                <li><a href="#">सूचना तथा समाचार</a></li>
+                <li><a href="#">सम्पर्क</a></li>
+            </ul>
+        </nav>
     </header>
-
+    
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>श्री प्रभात माध्यमिक विद्यालय</h1>
-                <p>"शिक्षा नै उज्यालो भविष्यको आधार हो"</p>
-                <a href="#about" class="btn">थप जानकारी</a>
-            </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h2>शिक्षा र चरित्र निर्माणको उत्कृष्ट केन्द्र</h2>
+            <p>प्रभात माध्यमिक विद्यालयले गुणस्तरीय शिक्षा, आधुनिक सुविधा र अनुभवी शिक्षकमार्फत विद्यार्थीहरूको सर्वांगीण विकासमा लागेको छ।</p>
+            <a href="#" class="btn">थप जानकारी</a>
         </div>
     </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">विद्यालयको बारेमा</h2>
+    
+    <!-- Notice Section -->
+    <section class="notice-section">
+        <h2 class="section-title">सूचना तथा सन्देश</h2>
+        
+        <div class="notice-container">
+            <div class="notice-board">
+                <h3>ताजा सूचना</h3>
+                <ul class="notice-list">
+                    <li><i class="fas fa-caret-right"></i> वार्षिक परीक्षा को समय तालिका प्रकाशन</li>
+                    <li><i class="fas fa-caret-right"></i> विद्यालयको वार्षिक कार्यक्रम घोषणा</li>
+                    <li><i class="fas fa-caret-right"></i> नयाँ शैक्षिक सत्रको आवेदन आमन्त्रण</li>
+                    <li><i class="fas fa-caret-right"></i> खेलकुद प्रतियोगिता को तयारी</li>
+                    <li><i class="fas fa-caret-right"></i> शिक्षक पदको रिक्रुटमेन्ट</li>
+                </ul>
+            </div>
             
-            <div class="about-content">
-                <div class="about-text">
-                    <p>श्री प्रभात माध्यमिक विद्यालय, पाल्पा जिल्ला स्थित, कक्षा १ देखि ८ सम्मका विद्यार्थीहरुलाई गुणस्तरीय शिक्षा प्रदान गर्दै आएको छ। हाम्रो ध्येय शिक्षालाई सबै बालबालिकाको अधिकारको रूपमा स्थापित गर्नु हो।</p>
-                    
-                    <h3>हाम्रो मिशन</h3>
-                    <ul>
-                        <li>प्रत्येक बालबालिकालाई गुणस्तरीय शिक्षा प्रदान गर्ने</li>
-                        <li>विद्यार्थीहरुमा नैतिक मूल्यरूढ गर्ने</li>
-                        <li>रचनात्मक सोच र समाधानक्षमता विकास गर्ने</li>
-                    </ul>
-                    
-                    <h3>हाम्रो विजन</h3>
-                    <ul>
-                        <li>समुदायको केन्द्रमा रहेको आदर्श विद्यालय बन्ने</li>
-                        <li>देशका उत्कृष्ट नागरिकहरु तयार गर्ने</li>
-                        <li>शिक्षाको क्षेत्रमा नवीनता ल्याउने</li>
-                    </ul>
-                </div>
-                
-                <div class="about-image">
-                    <img src="https://raw.githubusercontent.com/Mr-Prabhat/school/main/image.jpg" alt="विद्यालयको तस्बिर">
-                </div>
+            <div class="notice-board">
+                <h3>आगामी कार्यक्रम</h3>
+                <ul class="notice-list">
+                    <li><i class="fas fa-calendar-alt"></i> २०८०/११/१० - वार्षिक खेलकुद</li>
+                    <li><i class="fas fa-calendar-alt"></i> २०८०/११/२० - शिक्षक विदा कार्यक्रम</li>
+                    <li><i class="fas fa-calendar-alt"></i> २०८०/१२/०५ - विद्यालयको वार्षिक दिवस</li>
+                    <li><i class="fas fa-calendar-alt"></i> २०८०/१२/१५ - शीतकालिन अवकाश सुरु</li>
+                    <li><i class="fas fa-calendar-alt"></i> २०८१/०१/०१ - नयाँ सत्रको सुरुवात</li>
+                </ul>
             </div>
         </div>
     </section>
-
-    <!-- Programs Section -->
-    <section id="programs" style="background-color: #f0f7ff;">
-        <div class="container">
-            <h2 class="section-title">हाम्रा कार्यक्रमहरु</h2>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="section-title">हाम्रो विशेषताहरू</h2>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3>गुणस्तरीय शिक्षा</h3>
+                <p>अन्तर्राष्ट्रिय मानक अनुसारको पाठ्यक्रम र अनुभवी शिक्षकमार्फत गुणस्तरीय शिक्षा</p>
+            </div>
             
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="https://raw.githubusercontent.com/Mr-Prabhat/school/main/image.jpg" alt="कक्षा १">
-                    </div>
-                    <div class="program-info">
-                        <h3>कक्षा १</h3>
-                        <p>आधारभूत पठन, लेखन, गणित र सामाजिक ज्ञानको शिक्षा। बालमैत्री पद्धतिद्वारा शिक्षण।</p>
-                    </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-laptop"></i>
                 </div>
-                
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="https://raw.githubusercontent.com/Mr-Prabhat/school/main/image.jpg" alt="कक्षा ३">
-                    </div>
-                    <div class="program-info">
-                        <h3>कक्षा ३</h3>
-                        <p>विज्ञान, सामाजिक अध्ययन, गणित, नेपाली, अंग्रेजी र कला विषयमा समग्र शिक्षण।</p>
-                    </div>
-                </div>
-                
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="https://raw.githubusercontent.com/Mr-Prabhat/school/main/image.jpg" alt="कक्षा ५">
-                    </div>
-                    <div class="program-info">
-                        <h3>कक्षा ५</h3>
-                        <p>विज्ञान, गणित, समाजशास्त्र, नेपाली, अंग्रेजी र स्वास्थ्य शिक्षाको गहन अध्ययन।</p>
-                    </div>
-                </div>
-                
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="https://raw.githubusercontent.com/Mr-Prabhat/school/main/image.jpg" alt="कक्षा ८">
-                    </div>
-                    <div class="program-info">
-                        <h3>कक्षा ८</h3>
-                        <p>एसईई तयारी, विज्ञान प्रयोग, कम्प्युटर शिक्षा र व्यावहारिक जीवनका लागि आवश्यक ज्ञान।</p>
-                    </div>
-                </div>
+                <h3>आधुनिक प्रविधि</h3>
+                <p>डिजिटल कक्षा, कम्प्युटर ल्याब, विज्ञान प्रयोगशाला जस्ता आधुनिक सुविधा</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Notices Section -->
-    <section id="notices">
-        <div class="container">
-            <h2 class="section-title">सूचना तथा सन्देश</h2>
             
-            <div class="notices-container">
-                <div class="notice-item">
-                    <div class="notice-date">२०८० पौष १५</div>
-                    <h3>नयाँ भर्ना कार्यक्रम</h3>
-                    <p>विद्यालयमा नयाँ सत्रको भर्ना कार्यक्रम माघ १ गतेदेखि खुला हुनेछ। आवश्यक कागजातहरु: जन्मदर्ता, नागरिकता, फोटो।</p>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-paint-brush"></i>
                 </div>
-                
-                <div class="notice-item">
-                    <div class="notice-date">२०८० माघ ५</div>
-                    <h3>वार्षिक परीक्षा तालिका</h3>
-                    <p>विद्यार्थी तथा अभिभावकहरुलाई जानकारीका लागि वार्षिक परीक्षा तालिका फागुन १० गते प्रकाशित हुनेछ।</p>
-                </div>
-                
-                <div class="notice-item">
-                    <div class="notice-date">२०८० फागुन १</div>
-                    <h3>निःशुल्क पाठ्यपुस्तक वितरण</h3>
-                    <p>विद्यालयमा निःशुल्क पाठ्यपुस्तक वितरण कार्यक्रम फागुन १५ गतेबाट सुरु हुनेछ। सबै विद्यार्थीहरुलाई उपस्थित रहन अनुरोध छ।</p>
-                </div>
-                
-                <div class="notice-item">
-                    <div class="notice-date">२०८० चैत्र १०</div>
-                    <h3>खेलकुद प्रतियोगिता</h3>
-                    <p>वार्षिक खेलकुद प्रतियोगिता चैत्र २०-२५ गतेसम्म हुनेछ। सहभागी हुन चाहने विद्यार्थीहरुले आफ्नो नाम दर्ता गराउनुहोस्।</p>
-                </div>
+                <h3>सृजनात्मक कार्यक्रम</h3>
+                <p>खेलकुद, कला, संगीत, नाटक लगायत creative activities मार्फत सर्वांगीण विकास</p>
             </div>
         </div>
     </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" style="background-color: #f0f7ff;">
-        <div class="container">
-            <h2 class="section-title">ग्यालरी</h2>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/Mr-Prabhat/school/main/image.jpg" alt="विद्यालयको कार्यक्रम">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/Mr-Prabhat/school/main/image.jpg" alt="विद्यार्थीहरु">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/Mr-Prabhat/school/main/image.jpg" alt="खेलकुद">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/Mr-Prabhat/school/main/image.jpg" alt="शिक्षण कक्षा">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/Mr-Prabhat/school/main/image.jpg" alt="वार्षिकोत्सव">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/Mr-Prabhat/school/main/image.jpg" alt="प्रयोगशाला">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">सम्पर्क गर्नुहोस्</h2>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>हामीलाई सम्पर्क गर्नुहोस्</h3>
-                    
-                    <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> ठेगाना: पाल्पा, लुम्बिनी प्रदेश, नेपाल</p>
-                        <p><i class="fas fa-phone"></i> फोन: +९७७-९८XXXXXXXX</p>
-                        <p><i class="fas fa-envelope"></i> इमेल: info@prabhatschool.edu.np</p>
-                        <p><i class="fas fa-clock"></i> समय: आइतबार-शुक्रबार: १०:०० AM - ४:०० PM</p>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <form>
-                        <input type="text" placeholder="नाम" required>
-                        <input type="email" placeholder="इमेल" required>
-                        <input type="text" placeholder="विषय" required>
-                        <textarea placeholder="आफ्नो संदेश यहाँ लेख्नुहोस्" required></textarea>
-                        <button type="submit" class="btn">संदेश पठाउनुहोस्</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">श्री प्रभात माध्यमिक विद्यालय</div>
-                    <p>"शिक्षा नै उज्यालो भविष्यको आधार हो" - यस आदर्श वाक्यलाई लिएर हामी विद्यार्थीहरुलाई गुणस्तरीय शिक्षा प्रदान गर्दै आएका छौं।</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>त्वरित लिंकहरु</h4>
-                    <ul>
-                        <li><a href="#home">गृहपृष्ठ</a></li>
-                        <li><a href="#about">विद्यालयको बारेमा</a></li>
-                        <li><a href="#programs">कार्यक्रम</a></li>
-                        <li><a href="#notices">सूचना</a></li>
-                        <li><a href="#gallery">ग्यालरी</a></li>
-                        <li><a href="#contact">सम्पर्क</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>अन्य लिंकहरु</h4>
-                    <ul>
-                        <li><a href="#">भर्ना प्रक्रिया</a></li>
-                        <li><a href="#">शैक्षिक क्यालेन्डर</a></li>
-                        <li><a href="#">शिक्षक-कर्मचारी</a></li>
-                        <li><a href="#">डाउनलोड</a></li>
-                        <li><a href="#">सुझाव</a></li>
-                    </ul>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>हाम्रो बारे</h3>
+                <p>प्रभात माध्यमिक विद्यालय काठमाडौं जिल्लामा अवस्थित एक प्रतिष्ठित शैक्षिक संस्था हो। हाम्रो उद्देश्य गुणस्तरीय शिक्षा प्रदान गर्दै राष्ट्रिय तथा अन्तर्राष्ट्रिय मानक अनुसारको शिक्षा दिनु हो।</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>द्रुत लिंकहरू</h3>
+                <ul class="footer-links">
+                    <li><a href="#">गृहपृष्ठ</a></li>
+                    <li><a href="#">हाम्रो बारे</a></li>
+                    <li><a href="#">शैक्षिक कार्यक्रम</a></li>
+                    <li><a href="#">शिक्षकसभा</a></li>
+                    <li><a href="#">ग्यालरी</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>सम्पर्क जानकारी</h3>
+                <div class="contact-info-footer">
+                    <div><i class="fas fa-map-marker-alt"></i> <span>तोपागाउँ, काठमाडौं, नेपाल</span></div>
+                    <div><i class="fas fa-phone"></i> <span>०१-४२१२३४५, ९८५१०२०३०४</span></div>
+                    <div><i class="fas fa-envelope"></i> <span>info@prabhatschool.edu.np</span></div>
+                    <div><i class="fas fa-clock"></i> <span>आइतबार-शुक्रबार: १० AM - ५ PM</span></div>
                 </div>
             </div>
             
-            <div class="copyright">
-                <p>© २०८२ श्री प्रभात माध्यमिक विद्यालय | सबै अधिकार सुरक्षित</p>
+            <div class="footer-section">
+                <h3>हाम्रो अनुसरण गर्नुहोस्</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p>हाम्रा सोशल मिडिया च्यानलहरूमा जडान गर्नुहोस् र नयाँ अपडेटहरू प्राप्त गर्नुहोस्</p>
             </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© २०८० प्रभात माध्यमिक विद्यालय. सर्वाधिकार सुरक्षित.</p>
         </div>
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close mobile nav when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+        // Simple JavaScript for interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Notice board animation
+            const noticeItems = document.querySelectorAll('.notice-list li');
+            noticeItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    item.style.transform = 'translateX(5px)';
+                    item.style.transition = 'transform 0.3s';
+                });
+                
+                item.addEventListener('mouseleave', () => {
+                    item.style.transform = 'translateX(0)';
+                });
             });
-        });
-        
-        // Sticky header
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            header.classList.toggle('sticky', window.scrollY > 0);
+            
+            // Current year for copyright
+            const yearElement = document.querySelector('.copyright p');
+            if (yearElement) {
+                const currentYear = new Date().getFullYear();
+                const nepaliYear = currentYear + 57; // Convert to Nepali year
+                yearElement.textContent = `© ${nepaliYear} प्रभात माध्यमिक विद्यालय. सर्वाधिकार सुरक्षित.`;
+            }
         });
     </script>
 </body>
