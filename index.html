@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>प्रभात उच्च माध्यमिक विद्यालय - लुम्बिनी प्रदेश</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #FF7F2A;
@@ -168,7 +169,7 @@
 
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://mr-prabhat.github.io/school/image.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80') no-repeat center center/cover;
             display: flex;
             align-items: center;
             text-align: center;
@@ -641,6 +642,210 @@
             color: #aaa;
         }
 
+        /* Modal for gallery */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            margin-top: 50px;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--white);
+        }
+
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 1s;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            background: #ccc;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-dot.active {
+            background: var(--primary);
+        }
+
+        /* Counter section */
+        .counter-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .counter-item {
+            padding: 20px;
+        }
+
+        .counter-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        /* Calendar section */
+        .calendar {
+            background: var(--light);
+        }
+
+        .calendar-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .calendar-header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background: #ddd;
+        }
+
+        .calendar-cell {
+            background: var(--white);
+            padding: 10px;
+            min-height: 80px;
+            position: relative;
+        }
+
+        .calendar-cell.header {
+            background: var(--secondary);
+            color: var(--dark);
+            font-weight: 600;
+            text-align: center;
+            min-height: auto;
+        }
+
+        .event {
+            font-size: 12px;
+            padding: 2px 5px;
+            background: var(--accent);
+            color: var(--white);
+            border-radius: 3px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
         @media (max-width: 992px) {
             .hero h1 { font-size: 2.5rem; }
             .about-text { padding-right: 0; margin-bottom: 30px; }
@@ -676,25 +881,25 @@
         <div class="container">
             <div class="header-inner">
                 <div class="logo">
-                    <img src="https://mr-prabhat.github.io/school/logo.jpg" alt="School Logo">
+                    <img src="https://via.placeholder.com/50x50/FF7F2A/FFFFFF?text=P" alt="School Logo">
                     <span>प्रभात उच्च माध्यमिक विद्यालय</span>
                 </div>
                 <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">गृहपृष्ठ</a></li>
+                        <li><a href="#about">हाम्रो बारे</a></li>
+                        <li><a href="#academics">शैक्षिक कार्यक्रम</a></li>
+                        <li><a href="#admissions">भर्ना</a></li>
+                        <li><a href="#news">समाचार र कार्यक्रम</a></li>
+                        <li><a href="#gallery">ग्यालेरी</a></li>
+                        <li><a href="#faculty">शिक्षक</a></li>
+                        <li><a href="#contact">सम्पर्क</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="#about">हाम्रो बारे</a></li>
-            <li><a href="#academics">शैक्षिक कार्यक्रम</a></li>
-            <li><a href="#admissions">भर्ना</a></li>
-            <li><a href="#news">समाचार र कार्यक्रम</a></li>
-            <li><a href="#gallery">ग्यालेरी</a></li>
-            <li><a href="#faculty">शिक्षक</a></li>
-            <li><a href="#contact">सम्पर्क</a></li>
-        </ul>
-    </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -708,14 +913,41 @@
 
     <!-- About Section -->
     <section id="about" class="about section">
-        <div class="container about-content">
-            <div class="about-text">
-                <h2 class="section-title">हाम्रो बारेमा</h2>
-                <p>प्रभात उच्च माध्यमिक विद्यालय लुम्बिनी प्रदेशमा अवस्थित छ। हामी गुणस्तरीय शिक्षा र विद्यार्थीको समग्र विकासमा ध्यान केन्द्रित गर्दछौं। हाम्रो उद्देश्य बालबालिकालाई ज्ञान, संस्कार र सिर्जनात्मक क्षमतामा सक्षम बनाउनु हो।</p>
-                <a href="#contact" class="btn">सम्पर्क गर्नुहोस्</a>
+        <div class="container">
+            <h2 class="section-title">हाम्रो बारेमा</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>प्रभात उच्च माध्यमिक विद्यालय लुम्बिनी प्रदेशमा अवस्थित छ। हामी गुणस्तरीय शिक्षा र विद्यार्थीको समग्र विकासमा ध्यान केन्द्रित गर्दछौं। हाम्रो उद्देश्य बालबालिकालाई ज्ञान, संस्कार र सिर्जनात्मक क्षमतामा सक्षम बनाउनु हो।</p>
+                    <p>हामी विद्यार्थीहरूलाई शैक्षिक, सामाजिक, र नैतिक रूपमा सशक्त बनाउन प्रतिबद्ध छौं। हाम्रो अनुभवी शिक्षकहरूले विद्यार्थीहरूको सिर्जनशीलता र महत्वाकांक्षालाई प्रोत्साहन गर्न आधुनिक शिक्षण विधिहरू प्रयोग गर्छन्।</p>
+                    <a href="#contact" class="btn">सम्पर्क गर्नुहोस्</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="School Building">
+                </div>
             </div>
-            <div class="about-image">
-                <img src="https://mr-prabhat.github.io/school/image.jpg" alt="School Building">
+        </div>
+    </section>
+
+    <!-- Counter Section -->
+    <section class="counter-section section">
+        <div class="container">
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <div class="counter-number" data-count="1500">0</div>
+                    <h4>विद्यार्थीहरू</h4>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-count="50">0</div>
+                    <h4>शिक्षकहरू</h4>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-count="25">0</div>
+                    <h4>कक्षाहरू</h4>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-count="15">0</div>
+                    <h4>खेलकुद टिमहरू</h4>
+                </div>
             </div>
         </div>
     </section>
@@ -745,14 +977,22 @@
                 <div class="facility">
                     <i class="fas fa-school"></i>
                     <h4>प्रयोगशाला</h4>
+                    <p>आधुनिक विज्ञान र कम्प्युटर प्रयोगशाला</p>
                 </div>
                 <div class="facility">
                     <i class="fas fa-book-reader"></i>
                     <h4>पुस्तकालय</h4>
+                    <p>१०,००० भन्दा बढी पुस्तकहरू</p>
                 </div>
                 <div class="facility">
                     <i class="fas fa-futbol"></i>
                     <h4>खेलकुद</h4>
+                    <p>विविध खेलकुद सुविधा र मैदान</p>
+                </div>
+                <div class="facility">
+                    <i class="fas fa-music"></i>
+                    <h4>सांस्कृतिक कार्यक्रम</h4>
+                    <p>सांस्कृतिक कार्यक्रमहरूको आयोजना</p>
                 </div>
             </div>
         </div>
@@ -778,10 +1018,17 @@
                     <h3>भर्ना पुष्टि</h3>
                     <p>फाइनल निर्णय र भर्ना पुष्टि।</p>
                 </div>
+                <div class="step">
+                    <div class="step-number">४</div>
+                    <h3>शुल्क भुक्तानी</h3>
+                    <p>शुल्क भुक्तानी र कक्षा सुरुवात।</p>
+                </div>
             </div>
             <div class="downloads">
                 <div class="download-item"><i class="fas fa-file-pdf"></i><a href="#">भर्ना फारम डाउनलोड</a></div>
                 <div class="download-item"><i class="fas fa-file-pdf"></i><a href="#">पाठ्यक्रम विवरण</a></div>
+                <div class="download-item"><i class="fas fa-file-pdf"></i><a href="#">शुल्क संरचना</a></div>
+                <div class="download-item"><i class="fas fa-file-pdf"></i><a href="#">आवश्यक कागजातहरू</a></div>
             </div>
         </div>
     </section>
@@ -792,20 +1039,57 @@
             <h2 class="section-title">समाचार र कार्यक्रम</h2>
             <div class="news-grid">
                 <div class="news-card">
-                    <div class="news-image"><img src="https://mr-prabhat.github.io/school/image11.jpg" alt="News Image"></div>
+                    <div class="news-image"><img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="News Image"></div>
                     <div class="news-content">
                         <span class="news-date">२०८०/०१/०१</span>
                         <h3>विद्यालयको वार्षिक उत्सव</h3>
                         <p>वार्षिक उत्सवमा विद्यार्थीहरूको सांस्कृतिक कार्यक्रम सम्पन्न।</p>
+                        <a href="#" class="btn">थप पढ्नुहोस्</a>
                     </div>
                 </div>
                 <div class="news-card">
-                    <div class="news-image"><img src="https://mr-prabhat.github.io/school/image11.jpg" alt="News Image"></div>
+                    <div class="news-image"><img src="https://images.unsplash.com/photo-1541336032412-2048a678540d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="News Image"></div>
                     <div class="news-content">
                         <span class="news-date">२०८०/०२/१५</span>
                         <h3>खेलकुद प्रतियोगिता</h3>
                         <p>विद्यालय भित्रका विभिन्न खेलकुद कार्यक्रमहरू।</p>
+                        <a href="#" class="btn">थप पढ्नुहोस्</a>
                     </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image"><img src="https://images.unsplash.com/photo-1584697964358-3e14ca57658b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="News Image"></div>
+                    <div class="news-content">
+                        <span class="news-date">२०८०/०३/०५</span>
+                        <h3>शैक्षिक भ्रमण</h3>
+                        <p>कक्षा ९ र १० का विद्यार्थीहरूको ऐतिहासिक स्थल भ्रमण।</p>
+                        <a href="#" class="btn">थप पढ्नुहोस्</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section">
+        <div class="container">
+            <h2 class="section-title">विद्यार्थी र अभिभावकको विचार</h2>
+            <div class="testimonial-container">
+                <div class="testimonial active">
+                    <p class="testimonial-text">"प्रभात विद्यालयले मेरो छोरालाई केवल पुस्तकीय ज्ञान मात्र होइन, बरु जीवनका लागि आवश्यक सिपहरू पनि सिकाएको छ। उसको आत्मविश्वास र व्यक्तित्व विकासमा यस विद्यालयको ठूलो योगदान रहेको छ।"</p>
+                    <p class="testimonial-author">- राम बहादुर गुरुङ, अभिभावक</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimorial-text">"यो विद्यालयमा पढ्दा मलाई गणित विषय प्रति धेरै मनपर्न थाल्यो। शिक्षकहरूले धैर्यतापूर्वक सिकाउनुहुन्छ र प्रयोगात्मक कक्षाहरूले बुझ्न सजिलो बनाउँछ।"</p>
+                    <p class="testimonial-author">- सुस्मिता श्रेष्ठ, कक्षा ९</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"विद्यालयले विद्यार्थीहरूको सृजनात्मकतालाई प्रोत्साहन गर्न विविध कार्यक्रमहरू सञ्चालन गर्छ। मेरी छोरीले यहाँ कला र संगीतको ज्ञान प्राप्त गरेकी छ।"</p>
+                    <p class="testimonial-author">- गीता अधिकारी, अभिभावक</p>
+                </div>
+                <div class="testimonial-nav">
+                    <div class="testimonial-dot active" data-index="0"></div>
+                    <div class="testimonial-dot" data-index="1"></div>
+                    <div class="testimonial-dot" data-index="2"></div>
                 </div>
             </div>
         </div>
@@ -817,12 +1101,103 @@
             <h2 class="section-title">ग्यालेरी</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://mr-prabhat.github.io/school/image1.jpg" alt="Gallery Image 1">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="School Building">
                     <div class="gallery-overlay"><i class="fas fa-search"></i></div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://mr-prabhat.github.io/school/image11.jpg" alt="Gallery Image 2">
+                    <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Classroom">
                     <div class="gallery-overlay"><i class="fas fa-search"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1541336032412-2048a678540d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Sports Event">
+                    <div class="gallery-overlay"><i class="fas fa-search"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1584697964358-3e14ca57658b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Science Lab">
+                    <div class="gallery-overlay"><i class="fas fa-search"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Library">
+                    <div class="gallery-overlay"><i class="fas fa-search"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Cultural Program">
+                    <div class="gallery-overlay"><i class="fas fa-search"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="calendar section">
+        <div class="container">
+            <h2 class="section-title">आगामी कार्यक्रमहरू</h2>
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <h3>वैशाख, २०८०</h3>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-cell header">आइत</div>
+                    <div class="calendar-cell header">सोम</div>
+                    <div class="calendar-cell header">मङ्गल</div>
+                    <div class="calendar-cell header">बुध</div>
+                    <div class="calendar-cell header">बिही</div>
+                    <div class="calendar-cell header">शुक्र</div>
+                    <div class="calendar-cell header">शनि</div>
+                    
+                    <!-- Empty cells for days before the first day of the month -->
+                    <div class="calendar-cell"></div>
+                    <div class="calendar-cell"></div>
+                    <div class="calendar-cell">
+                        1
+                        <div class="event">विद्यालय सुरु</div>
+                    </div>
+                    <div class="calendar-cell">2</div>
+                    <div class="calendar-cell">3</div>
+                    <div class="calendar-cell">4</div>
+                    <div class="calendar-cell">5</div>
+                    
+                    <div class="calendar-cell">6</div>
+                    <div class="calendar-cell">7</div>
+                    <div class="calendar-cell">8</div>
+                    <div class="calendar-cell">9</div>
+                    <div class="calendar-cell">10</div>
+                    <div class="calendar-cell">
+                        11
+                        <div class="event">खेलकुद दिवस</div>
+                    </div>
+                    <div class="calendar-cell">12</div>
+                    
+                    <div class="calendar-cell">13</div>
+                    <div class="calendar-cell">14</div>
+                    <div class="calendar-cell">15</div>
+                    <div class="calendar-cell">16</div>
+                    <div class="calendar-cell">17</div>
+                    <div class="calendar-cell">18</div>
+                    <div class="calendar-cell">19</div>
+                    
+                    <div class="calendar-cell">20</div>
+                    <div class="calendar-cell">
+                        21
+                        <div class="event">मध्यावधि परीक्षा</div>
+                    </div>
+                    <div class="calendar-cell">
+                        22
+                        <div class="event">मध्यावधि परीक्षा</div>
+                    </div>
+                    <div class="calendar-cell">
+                        23
+                        <div class="event">मध्यावधि परीक्षा</div>
+                    </div>
+                    <div class="calendar-cell">24</div>
+                    <div class="calendar-cell">25</div>
+                    <div class="calendar-cell">26</div>
+                    
+                    <div class="calendar-cell">27</div>
+                    <div class="calendar-cell">28</div>
+                    <div class="calendar-cell">29</div>
+                    <div class="calendar-cell">30</div>
+                    <div class="calendar-cell">31</div>
                 </div>
             </div>
         </div>
@@ -834,10 +1209,51 @@
             <h2 class="section-title">हाम्रो शिक्षक</h2>
             <div class="faculty-grid">
                 <div class="teacher-card">
-                    <div class="teacher-image"><img src="https://mr-prabhat.github.io/school/image11.jpg" alt="Teacher Image"></div>
+                    <div class="teacher-image"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Teacher Image"></div>
                     <div class="teacher-info">
-                        <h4 class="teacher-subject">गणित शिक्षक</h4>
+                        <h4>राम प्रसाद शर्मा</h4>
+                        <p class="teacher-subject">गणित शिक्षक</p>
                         <p class="teacher-qualification">स्नातक, गणितमा विशेषज्ञ</p>
+                        <p>१५ वर्षे शिक्षण अनुभव</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-image"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Teacher Image"></div>
+                    <div class="teacher-info">
+                        <h4>सीता देवी</h4>
+                        <p class="teacher-subject">विज्ञान शिक्षिका</p>
+                        <p class="teacher-qualification">स्नातकोत्तर, रसायनशास्त्र</p>
+                        <p>१२ वर्षे शिक्षण अनुभव</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-image"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Teacher Image"></div>
+                    <div class="teacher-info">
+                        <h4>हरि बहादुर थापा</h4>
+                        <p class="teacher-subject">अंग्रेजी शिक्षक</p>
+                        <p class="teacher-qualification">स्नातकोत्तर, अंग्रेजी साहित्य</p>
+                        <p>१० वर्षे शिक्षण अनुभव</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-image"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Teacher Image"></div>
+                    <div class="teacher-info">
+                        <h4>गीता कुमारी</h4>
+                        <p class="teacher-subject">कम्प्युटर शिक्षिका</p>
+                        <p class="teacher-qualification">स्नातकोत्तर, कम्प्युटर इन्जिनियरिङ</p>
+                        <p>८ वर्षे शिक्षण अनुभव</p>
                         <div class="social-links">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -854,19 +1270,46 @@
             <div class="contact-info">
                 <h3>सम्पर्क जानकारी</h3>
                 <div class="info-item"><i class="fas fa-map-marker-alt"></i><p>लुम्बिनी प्रदेश, नेपाल</p></div>
-                <div class="info-item"><i class="fas fa-phone"></i><p>+977-01-1234567</p></div>
-                <div class="info-item"><i class="fas fa-envelope"></i><p>info@prabhat.edu.np</p></div>
+                <div class="info-item"><i class="fas fa-phone"></i><p>+९७७-०१-१२३४५६७, +९७७-९८५६०२१४३०</p></div>
+                <div class="info-item"><i class="fas fa-envelope"></i><p>info@prabhat.edu.np, admin@prabhat.edu.np</p></div>
+                <div class="info-item"><i class="fas fa-clock"></i><p>सोम-शुक्र: १०:०० AM - ५:०० PM<br>शनि: १०:०० AM - २:०० PM</p></div>
+                
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
             <div class="contact-form">
                 <h3>हामीलाई सन्देश पठाउनुहोस्</h3>
-                <div class="form-group"><label>नाम</label><input type="text" class="form-control"></div>
-                <div class="form-group"><label>इमेल</label><input type="email" class="form-control"></div>
-                <div class="form-group"><label>सन्देश</label><textarea class="form-control"></textarea></div>
-                <button class="btn">पठाउनुहोस्</button>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">नाम</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">इमेल</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">फोन नम्बर</label>
+                        <input type="tel" id="phone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">विषय</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">सन्देश</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">पठाउनुहोस्</button>
+                </form>
             </div>
         </div>
         <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18..."></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113032.60056700604!2d83.41692034999999!3d27.70896035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3996871985e5fb4f%3A0x832c98b0a096e0f8!2sLumbini%20Province!5e0!3m2!1sen!2snp!4v1686743661245!5m2!1sen!2snp" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
@@ -875,7 +1318,13 @@
         <div class="container footer-content">
             <div class="footer-column">
                 <h3>हाम्रो विद्यालय</h3>
-                <p>प्रभात उच्च माध्यमिक विद्यालय, लुम्बिनी प्रदेश।</p>
+                <p>प्रभात उच्च माध्यमिक विद्यालय, लुम्बिनी प्रदेश। हामी गुणस्तरीय शिक्षा र विद्यार्थीको समग्र विकासमा ध्यान केन्द्रित गर्दछौं।</p>
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
             <div class="footer-column">
                 <h3>तत्काल लिंक</h3>
@@ -886,27 +1335,205 @@
                     <li><a href="#admissions">भर्ना</a></li>
                     <li><a href="#news">समाचार र कार्यक्रम</a></li>
                     <li><a href="#gallery">ग्यालेरी</a></li>
+                    <li><a href="#faculty">शिक्षक</a></li>
                     <li><a href="#contact">सम्पर्क</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h3>हाम्रो सामाजिक सञ्जाल</h3>
-                <div class="social-media">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+                <h3>आवश्यक लिंक</h3>
+                <ul class="footer-links">
+                    <li><a href="#">शैक्षिक क्यालेन्डर</a></li>
+                    <li><a href="#">पाठ्यक्रम</a></li>
+                    <li><a href="#">नतिजा</a></li>
+                    <li><a href="#">शुल्क संरचना</a></li>
+                    <li><a href="#">स्कुल बस मार्ग</a></li>
+                    <li><a href="#">क्यान्टिन</a></li>
+                    <li><a href="#">स्वास्थ्य सेवा</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>न्युजलेटर सदस्यता</h3>
+                <p>हाम्रो न्युजलेटरमा सदस्यता लिनुहोस् र नयाँ अपडेटहरू प्राप्त गर्नुहोस्।</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="तपाईंको इमेल" class="form-control" style="margin-bottom: 10px;">
+                    <button type="submit" class="btn">सदस्यता लिनुहोस्</button>
+                </form>
             </div>
         </div>
-        <div class="footer-bottom">© २०८० प्रभात उच्च माध्यमिक विद्यालय। सबै अधिकार सुरक्षित।</div>
+        <div class="footer-bottom">
+            <p>© २०८० प्रभात उच्च माध्यमिक विद्यालय। सबै अधिकार सुरक्षित।</p>
+            <p>Designed with ❤️ for quality education</p>
+        </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
     <script>
+        // Mobile menu toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const nav = document.querySelector('nav');
 
         mobileMenuBtn.addEventListener('click', () => {
             nav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Gallery modal
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const modal = document.getElementById('galleryModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeModal = document.querySelector('.close');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                modal.style.display = 'block';
+                modalImg.src = item.querySelector('img').src;
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Testimonial slider
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        let currentTestimonial = 0;
+
+        function showTestimonial(index) {
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = parseInt(dot.getAttribute('data-index'));
+                showTestimonial(index);
+            });
+        });
+
+        // Auto rotate testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter-number');
+        const speed = 200;
+
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = Math.ceil(target / speed);
+                
+                if (count < target) {
+                    counter.innerText = count + increment;
+                    setTimeout(() => animateCounters(), 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+
+        // Check if counter section is in viewport
+        const counterSection = document.querySelector('.counter-section');
+        
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        let countersAnimated = false;
+        
+        window.addEventListener('scroll', () => {
+            if (isInViewport(counterSection) && !countersAnimated) {
+                animateCounters();
+                countersAnimated = true;
+            }
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('धन्यवाद! तपाईंको सन्देश सफलतापूर्वक पठाइयो। हामी चाँडै नै तपाईंसँग सम्पर्क गर्नेछौं।');
+            contactForm.reset();
+        });
+
+        // Newsletter form
+        const newsletterForm = document.querySelector('.newsletter-form');
+        
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('धन्यवाद! तपाईंले सफलतापूर्वक हाम्रो न्युजलेटरको सदस्यता लिनुभयो।');
+            newsletterForm.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     </script>
 </body>
