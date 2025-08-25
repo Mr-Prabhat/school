@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>पाठशाला स्कूल</title>
+    <title>प्रभात माध्यमिक विद्यालय</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #1a5276;
@@ -16,9 +17,15 @@
         }
         
         body {
-            font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+            font-family: 'Noto Sans Devanagari', sans-serif;
             color: #333;
             padding-top: 80px;
+            background-color: #f8f9fa;
+        }
+        
+        .nepali-text {
+            line-height: 1.8;
+            text-align: justify;
         }
         
         .navbar {
@@ -29,11 +36,19 @@
         .navbar-brand {
             font-weight: 700;
             color: white !important;
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand img {
+            height: 50px;
+            margin-right: 10px;
         }
         
         .nav-link {
             color: rgba(255,255,255,0.85) !important;
             font-weight: 500;
+            margin: 0 5px;
         }
         
         .nav-link:hover {
@@ -45,16 +60,18 @@
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 100px 0;
+            padding: 120px 0;
             text-align: center;
+            margin-top: -80px;
         }
         
         .section-title {
             position: relative;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             padding-bottom: 15px;
             text-align: center;
             color: var(--primary-color);
+            font-weight: 700;
         }
         
         .section-title:after {
@@ -63,8 +80,8 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
+            width: 100px;
+            height: 4px;
             background-color: var(--accent-color);
         }
         
@@ -74,6 +91,7 @@
             transition: transform 0.3s;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             height: 100%;
+            border: none;
         }
         
         .program-card:hover {
@@ -82,6 +100,24 @@
         
         .program-card img {
             height: 200px;
+            object-fit: cover;
+        }
+        
+        .teacher-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            height: 100%;
+            border: none;
+        }
+        
+        .teacher-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .teacher-card img {
+            height: 250px;
             object-fit: cover;
         }
         
@@ -105,21 +141,23 @@
         .testimonial-card {
             background-color: var(--light-color);
             border-radius: 10px;
-            padding: 20px;
+            padding: 25px;
             margin-bottom: 20px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 100%;
         }
         
         footer {
             background-color: var(--dark-color);
             color: white;
-            padding: 50px 0 20px;
+            padding: 60px 0 20px;
         }
         
         .social-icon {
             color: white;
             font-size: 24px;
             margin-right: 15px;
+            transition: color 0.3s;
         }
         
         .social-icon:hover {
@@ -129,16 +167,13 @@
         .btn-primary {
             background-color: var(--primary-color);
             border-color: var(--primary-color);
+            padding: 10px 20px;
+            font-weight: 500;
         }
         
         .btn-primary:hover {
             background-color: var(--secondary-color);
             border-color: var(--secondary-color);
-        }
-        
-        .nepali-text {
-            font-family: 'Noto Sans Devanagari', 'Mangal', sans-serif;
-            line-height: 1.8;
         }
         
         .back-to-top {
@@ -158,13 +193,51 @@
             z-index: 1000;
             text-decoration: none;
         }
+        
+        .about-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('about-school.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .news-card {
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tab-content {
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+        
+        .nav-tabs .nav-link.active {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+        
+        .nav-tabs .nav-link {
+            color: var(--dark-color);
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">पाठशाला स्कूल</a>
+            <a class="navbar-brand" href="#">
+                <img src="logo.jpg" alt="प्रभात माध्यमिक विद्यालय लोगो">
+                <span>प्रभात माध्यमिक विद्यालय</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -176,6 +249,7 @@
                     <li class="nav-item"><a class="nav-link" href="#admissions">भर्ना</a></li>
                     <li class="nav-item"><a class="nav-link" href="#resources">स्रोतहरू</a></li>
                     <li class="nav-item"><a class="nav-link" href="#gallery">ग्यालरी</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#teachers">शिक्षकहरू</a></li>
                     <li class="nav-item"><a class="nav-link" href="#career">क्यारियर</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">सम्पर्क</a></li>
                 </ul>
@@ -186,32 +260,79 @@
     <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="container">
-            <h1 class="display-3 fw-bold">पाठशाला स्कूलमा स्वागतम्</h1>
+            <h1 class="display-3 fw-bold">प्रभात माध्यमिक विद्यालयमा स्वागतम्</h1>
             <p class="lead fs-3">जिज्ञासा, ज्ञान, र चरित्र निर्माण गर्दै</p>
             <a href="#admissions" class="btn btn-primary btn-lg mt-3">भर्नाको लागि आवेदन दिनुहोस्</a>
         </div>
     </section>
 
     <!-- About Us Section -->
-    <section id="about" class="py-5">
+    <section id="about" class="about-section py-5">
         <div class="container">
-            <h2 class="section-title">हाम्रो बारेमा</h2>
+            <h2 class="section-title text-white">हाम्रो बारेमा</h2>
             <div class="row">
                 <div class="col-md-6">
-                    <img src="about-school.jpg" alt="About Pathshala School" class="img-fluid rounded mb-4">
-                </div>
-                <div class="col-md-6 nepali-text">
-                    <h3>२० वर्षे शैक्षिक यात्रा</h3>
-                    <p>पाठशाला स्कूलले सन् २००४ मा शिक्षाको क्षेत्रमा आफ्नो यात्रा सुरु गरेको थियो। हाम्रो लक्ष्य विद्यार्थीहरूलाई जिज्ञासा, दया, ज्ञान, आत्मनिरीक्षण, र आत्मनिर्भरताको मूल्यहरूसाथ शिक्षा प्रदान गर्नु हो।</p>
-                    <p>हामीले २०+ वर्ष सेवा, ५०००+ स्नातक, र २२०+ कर्मचारीहरूको उपलब्धि हासिल गरेका छौं।</p>
-                    <div class="row mt-4">
-                        <div class="col-sm-6">
-                            <h4>हाम्रो दर्शन</h4>
-                            <p>विद्यार्थी केन्द्रित शिक्षा, चरित्र निर्माण, र समग्र विकासमा जोड</p>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3>२० वर्षे शैक्षिक यात्रा</h3>
+                            <p class="nepali-text">प्रभात माध्यमिक विद्यालयले सन् २००४ मा शिक्षाको क्षेत्रमा आफ्नो यात्रा सुरु गरेको थियो। हाम्रो लक्ष्य विद्यार्थीहरूलाई जिज्ञासा, दया, ज्ञान, आत्मनिरीक्षण, र आत्मनिर्भरताको मूल्यहरूसाथ शिक्षा प्रदान गर्नु हो।</p>
+                            <p class="nepali-text">हामीले २०+ वर्ष सेवा, ५०००+ स्नातक, र २२०+ कर्मचारीहरूको उपलब्धि हासिल गरेका छौं।</p>
                         </div>
-                        <div class="col-sm-6">
-                            <h4>संस्थापकको सन्देश</h4>
-                            <p>"शिक्षा जीवन परिवर्तन गर्ने शक्ति हो। हामी भविष्यको नेतृत्व तयार गर्दैछौं।"<br>- ईश्वर अधिकारी, प्रमुख कार्यकारी अधिकारी</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>हाम्रो दर्शन र इतिहास</h3>
+                            <p class="nepali-text">हामी विद्यार्थी केन्द्रित शिक्षामा विश्वास गर्छौं जसले जीवनभरिको सिक्ने प्रक्रियालाई बढावा दिन्छ। हाम्रो दर्शन जिज्ञासा, दया, ज्ञान, आत्मनिरीक्षण, र आत्मनिर्भरतामा आधारित छ।</p>
+                            <p class="nepali-text">हाम्रो इतिहास विद्यालयले समुदायलाई गुणस्तरीय शिक्षा प्रदान गर्ने २० वर्षे समर्पणको कथा हो।</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>संस्थापकको सन्देश</h3>
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="prabhat.jpg" alt="संस्थापक" class="rounded-circle me-3" width="80">
+                                <div>
+                                    <h5 class="mb-0">prabhat panthi</h5>
+                                    <p class="mb-0">प्रमुख कार्यकारी अधिकारी</p>
+                                </div>
+                            </div>
+                            <p class="nepali-text">"शिक्षा जीवन परिवर्तन गर्ने शक्ति हो। हामी भविष्यको नेतृत्व तयार गर्दैछौं। प्रभात माध्यमिक विद्यालयले विद्यार्थीहरूलाई शैक्षिक उत्कृष्टता, नैतिक मूल्यहरू, र सामाजिक जिम्मेवारीको साथ शिक्षा प्रदान गर्ने हाम्रो मिशन जारी राखेको छ।"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>नेतृत्व टोली</h3>
+                            <div class="row">
+                                <div class="col-6 text-center">
+                                    <img src="laxman.jpg" alt="प्रधानाध्यापक" class="rounded-circle mb-2" width="80">
+                                    <h6>लक्ष्मण ओली</h6>
+                                    <p class="small">प्रधानाध्यापक</p>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <img src="vice-principal.jpg" alt="उप-प्रधानाध्यापक" class="rounded-circle mb-2" width="80">
+                                    <h6>सुश्री सीता देवी</h6>
+                                    <p class="small">उप-प्रधानाध्यापक</p>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <img src="academic-head.jpg" alt="शैक्षिक प्रमुख" class="rounded-circle mb-2" width="80">
+                                    <h6>डा. हरी प्रसाद</h6>
+                                    <p class="small">शैक्षिक प्रमुख</p>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <img src="admin-head.jpg" alt="प्रशासनिक प्रमुख" class="rounded-circle mb-2" width="80">
+                                    <h6>श्री महेन्द्र कुमार</h6>
+                                    <p class="small">प्रशासनिक प्रमुख</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -226,21 +347,73 @@
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="program-card card">
-                        <img src="pathshala-program.jpg" class="card-img-top" alt="Pathshala School Program">
+                        <img src="image1.jpg" class="card-img-top" alt="विद्यालय कार्यक्रम">
                         <div class="card-body">
-                            <h3 class="card-title">पाठशाला स्कूल (कक्षा I–X)</h3>
-                            <p class="card-text nepali-text">समग्र शिक्षा, मूल्य + सरकारी पाठ्यक्रम, साना कक्षाकोठा, व्यक्तिगत ध्यान, रचनात्मकता र महत्वपूर्ण सोचमा जोड</p>
+                            <h3 class="card-title">प्रभात विद्यालय (कक्षा I–X)</h3>
+                            <p class="card-text nepali-text">हाम्रो विद्यालय कार्यक्रमले समग्र शिक्षा, मूल्य + सरकारी पाठ्यक्रम, साना कक्षाकोठा, व्यक्तिगत ध्यान, रचनात्मकता र महत्वपूर्ण सोचमा जोड दिन्छ।</p>
+                            <h5>विशेषताहरू:</h5>
+                            <ul class="nepali-text">
+                                <li>व्यक्तिगत ध्यान दिने साना कक्षाहरू</li>
+                                <li>नैतिक मूल्य र चरित्र निर्माण</li>
+                                <li>विज्ञान, कला, र खेलकुदमा सन्तुलित शिक्षा</li>
+                                <li>अनलाइन शिक्षा सुविधा</li>
+                                <li>वार्षिक कार्यक्रम र प्रतियोगिताहरू</li>
+                            </ul>
                             <a href="#" class="btn btn-primary">थप जानकारी</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="program-card card">
-                        <img src="pre-uni-program.jpg" class="card-img-top" alt="Pre-Uni Program">
+                        <img src="image2.jpg" class="card-img-top" alt="प्रि-युनि कार्यक्रम">
                         <div class="card-body">
                             <h3 class="card-title">प्रि-युनि कार्यक्रम (कक्षा XI–XII, NEB पाठ्यक्रम)</h3>
-                            <p class="card-text nepali-text">NEB पाठ्यक्रम, मूल्य-आधारित शिक्षा, महत्वपूर्ण सोचमा ध्यान केन्द्रित, कलेज तयारी, विश्वविद्यालय प्रवेशको लागि मार्गदर्शन</p>
+                            <p class="card-text nepali-text">हाम्रो प्रि-युनि कार्यक्रम NEB पाठ्यक्रम अनुसार चल्छ, मूल्य-आधारित शिक्षा, महत्वपूर्ण सोचमा ध्यान केन्द्रित, कलेज तयारी, विश्वविद्यालय प्रवेशको लागि मार्गदर्शन दिन्छ।</p>
+                            <h5>विशेषताहरू:</h5>
+                            <ul class="nepali-text">
+                                <li>NEB पाठ्यक्रम अनुसार शिक्षा</li>
+                                <li>अनुभवी शिक्षकहरू</li>
+                                <li>नियमित मूल्याङ्कन र प्रगति विवरण</li>
+                                <li>क्याम्पस तयारी कार्यक्रम</li>
+                                <li>विज्ञान, व्यवस्थापन र मानविकी स्ट्रिम</li>
+                            </ul>
                             <a href="#" class="btn btn-primary">थप जानकारी</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="text-center mb-4">पाठशालामा जीवन</h3>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 text-center mb-4">
+                            <div class="bg-primary text-white rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                <i class="fas fa-users fa-2x"></i>
+                            </div>
+                            <h5 class="mt-3">क्लबहरू र गतिविधिहरू</h5>
+                            <p class="nepali-text">विज्ञान क्लब, साहित्य क्लब, खेलकुद क्लब, र युवा रेड क्रस</p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 text-center mb-4">
+                            <div class="bg-primary text-white rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                <i class="fas fa-hands-helping fa-2x"></i>
+                            </div>
+                            <h5 class="mt-3">सामुदायिक सेवा</h5>
+                            <p class="nepali-text">समुदाय सेवा परियोजनाहरू, वातावरण संरक्षण, र सामाजिक जिम्मेवारी</p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 text-center mb-4">
+                            <div class="bg-primary text-white rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                <i class="fas fa-theater-masks fa-2x"></i>
+                            </div>
+                            <h5 class="mt-3">थिएटर, कला, सङ्गीत</h5>
+                            <p class="nepali-text">वार्षिक नाटक, कला प्रदर्शनी, सांस्कृतिक कार्यक्रम, र सङ्गीत प्रशिक्षण</p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 text-center mb-4">
+                            <div class="bg-primary text-white rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                <i class="fas fa-laptop fa-2x"></i>
+                            </div>
+                            <h5 class="mt-3">टेक एकीकरण</h5>
+                            <p class="nepali-text">कम्प्युटर ल्याब, स्मार्ट कक्षा, अनलाइन शिक्षण साधन, र डिजिटल सिकाइ</p>
                         </div>
                     </div>
                 </div>
@@ -248,82 +421,52 @@
         </div>
     </section>
 
-    <!-- Life at Pathshala Section -->
-    <section id="life" class="py-5">
-        <div class="container">
-            <h2 class="section-title">पाठशालामा जीवन</h2>
-            <div class="row">
-                <div class="col-md-8 mx-auto text-center nepali-text">
-                    <p>हामी विद्यार्थीहरूको समग्र विकासमा विश्वास गर्छौं। हाम्रा विद्यार्थीहरूले विभिन्न गतिविधिहरूमा भाग लिने अवसर पाउँछन्:</p>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-md-3 col-sm-6 text-center">
-                    <div class="bg-primary text-white rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-                        <i class="fas fa-users fa-2x"></i>
-                    </div>
-                    <h4 class="mt-3">क्लबहरू र गतिविधिहरू</h4>
-                </div>
-                <div class="col-md-3 col-sm-6 text-center">
-                    <div class="bg-primary text-white rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-                        <i class="fas fa-hands-helping fa-2x"></i>
-                    </div>
-                    <h4 class="mt-3">सामुदायिक सेवा</h4>
-                </div>
-                <div class="col-md-3 col-sm-6 text-center">
-                    <div class="bg-primary text-white rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-                        <i class="fas fa-theater-masks fa-2x"></i>
-                    </div>
-                    <h4 class="mt-3">थिएटर, कला, सङ्गीत</h4>
-                </div>
-                <div class="col-md-3 col-sm-6 text-center">
-                    <div class="bg-primary text-white rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-                        <i class="fas fa-laptop fa-2x"></i>
-                    </div>
-                    <h4 class="mt-3">टेक एकीकरण</h4>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-md-12 text-center">
-                    <img src="school-life.jpg" alt="Life at Pathshala" class="img-fluid rounded">
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Admissions Section -->
-    <section id="admissions" class="py-5 bg-light">
+    <section id="admissions" class="py-5">
         <div class="container">
             <h2 class="section-title">भर्ना प्रक्रिया</h2>
             <div class="row">
-                <div class="col-md-6 nepali-text">
-                    <h3>भर्ना आवश्यकताहरू</h3>
-                    <ul>
-                        <li>जन्मदर्ता प्रमाणपत्र</li>
-                        <li>अभिभावकको नागरिकता प्रतिलिपि</li>
-                        <li>पुरानो स्कूलबाट प्रवेशपत्र</li>
-                        <li>चार तस्वीरहरू</li>
-                        <li>सिफारिस पत्र (यदि लागू)</li>
-                    </ul>
-                    <h3 class="mt-4">भर्ना प्रक्रिया</h3>
-                    <ol>
-                        <li>आवेदन फाराम भर्नुहोस्</li>
-                        <li>आवश्यक कागजातहरू जम्मा गर्नुहोस्</li>
-                        <li>छात्रवृत्ति / प्रवेश परीक्षा दिनुहोस् (यदि लागू)</li>
-                        <li>स्कूल शुल्क जम्मा गर्नुहोस्</li>
-                        <li>नियमित कक्षा सुरु गर्नुहोस्</li>
-                    </ol>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3>भर्ना आवश्यकताहरू</h3>
+                            <ul class="nepali-text">
+                                <li>जन्मदर्ता प्रमाणपत्र (प्रतिलिपि)</li>
+                                <li>अभिभावकको नागरिकता प्रतिलिपि</li>
+                                <li>पुरानो स्कूलबाट प्रवेशपत्र</li>
+                                <li>चार पासपोर्ट आकारका तस्वीरहरू</li>
+                                <li>सिफारिस पत्र (यदि लागू)</li>
+                                <li>मेडिकल जाँच बुँदा</li>
+                                <li>भर्ना फर्म सही ढङ्गले भरिएको</li>
+                            </ul>
+                            <h4 class="mt-4">भर्ना प्रक्रिया</h4>
+                            <ol class="nepali-text">
+                                <li>आवेदन फाराम भर्नुहोस् (अनलाइन वा अफलाइन)</li>
+                                <li>आवश्यक कागजातहरू जम्मा गर्नुहोस्</li>
+                                <li>छात्रवृत्ति / प्रवेश परीक्षा दिनुहोस् (यदि लागू)</li>
+                                <li>स्कूल शुल्क जम्मा गर्नुहोस्</li>
+                                <li>नियमित कक्षा सुरु गर्नुहोस्</li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card">
+                    <div class="card h-100">
                         <div class="card-body">
-                            <h3 class="card-title">अनलाइन आवेदन</h3>
-                            <p class="card-text">हाम्रो अनलाइन पोर्टल मार्फत आवेदन दिनुहोस्</p>
-                            <a href="https://apply.pathshala.edu.np" class="btn btn-primary btn-lg w-100">apply.pathshala.edu.np</a>
-                            <hr>
-                            <h4 class="mt-3">वा हामीलाई सम्पर्क गर्नुहोस्</h4>
-                            <p>ईमेल: admissions@pathshala.edu.np</p>
-                            <p>फोन: ९८०१२३४५६७, ०१-४१२३४५६</p>
+                            <h3>अनलाइन आवेदन</h3>
+                            <p class="nepali-text">हाम्रो अनलाइन पोर्टल मार्फत आवेदन दिनुहोस्। तलको बटनमा क्लिक गरेर आवेदन प्रक्रिया पूरा गर्नुहोस्।</p>
+                            <a href="https://apply.prabhat.edu.np" class="btn btn-primary btn-lg w-100 mb-4">apply.prabhat.edu.np</a>
+                            
+                            <h4>वा हामीलाई सम्पर्क गर्नुहोस्</h4>
+                            <p><i class="fas fa-envelope me-2"></i> admissions@prabhat.edu.np</p>
+                            <p><i class="fas fa-phone me-2"></i> ९८०१२३४५६७, ०१-४१२३४५६</p>
+                            <p><i class="fas fa-clock me-2"></i> सोम-शुक्र: १०:०० AM - ४:०० PM</p>
+                            <p><i class="fas fa-map-marker-alt me-2"></i> बaneshwor, काठमाडौं, नेपाल</p>
+                            
+                            <div class="mt-4">
+                                <h5>छात्रवृत्ति अवसरहरू</h5>
+                                <p class="nepali-text">हामी मेधावी र आवश्यकता आधारित छात्रवृत्तिहरू प्रदान गर्दछौं। थप जानकारीको लागि भर्ना कार्यालयमा सम्पर्क गर्नुहोस्।</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -332,244 +475,518 @@
     </section>
 
     <!-- Resources Section -->
-    <section id="resources" class="py-5">
+    <section id="resources" class="py-5 bg-light">
         <div class="container">
             <h2 class="section-title">स्रोतहरू</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-newspaper fa-3x text-primary mb-3"></i>
-                            <h3>समाचार पत्रिका</h3>
-                            <p>हाम्रा नियमित समाचार पत्रिकाहरू डाउनलोड गर्नुहोस्</p>
-                            <a href="#" class="btn btn-outline-primary">अवलोकन गर्नुहोस्</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-book fa-3x text-primary mb-3"></i>
-                            <h3>प्रकाशनहरू</h3>
-                            <p>विद्यार्थी र शिक्षकहरूद्वारा तयार गरिएका प्रकाशनहरू</p>
-                            <a href="#" class="btn btn-outline-primary">अवलोकन गर्नुहोस्</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-download fa-3x text-primary mb-3"></i>
-                            <h3>डाउनलोडहरू</h3>
-                            <p>पाठ्यक्रम, एकेडेमिक क्यालेन्डर, र अन्य फाइलहरू</p>
-                            <a href="#" class="btn btn-outline-primary">डाउनलोड गर्नुहोस्</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title">ग्यालरी</h2>
-            <div class="row">
-                <div class="col-md-4 gallery-img">
-                    <img src="classroom.jpg" alt="Classroom" class="img-fluid">
-                </div>
-                <div class="col-md-4 gallery-img">
-                    <img src="students.jpg" alt="Students" class="img-fluid">
-                </div>
-                <div class="col-md-4 gallery-img">
-                    <img src="cultural-program.jpg" alt="Cultural Program" class="img-fluid">
-                </div>
-                <div class="col-md-4 gallery-img">
-                    <img src="sports.jpg" alt="Sports" class="img-fluid">
-                </div>
-                <div class="col-md-4 gallery-img">
-                    <img src="mun.jpg" alt="Model UN" class="img-fluid">
-                </div>
-                <div class="col-md-4 gallery-img">
-                    <img src="assembly.jpg" alt="School Assembly" class="img-fluid">
-                </div>
-            </div>
-            <div class="text-center mt-4">
-                <a href="#" class="btn btn-primary">थप तस्वीरहरू हेर्नुहोस्</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-5">
-        <div class="container">
-            <h2 class="section-title">विद्यार्थी र अभिभावकहरूको प्रतिक्रिया</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="testimonial-card">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="parent.jpg" alt="Parent" class="rounded-circle me-3" width="60">
-                            <div>
-                                <h5 class="mb-0">राम बहादुर थापा</h5>
-                                <p class="mb-0">अभिभावक</p>
-                            </div>
-                        </div>
-                        <p class="nepali-text">"पाठशाला स्कूलले मेरो छोरालाई केवल शैक्षिक रूपमा होइन बल्कि व्यक्तित्व विकासमा पनि धेरै मदत गरेको छ। उसले आत्मविश्वास, महत्वपूर्ण सोच, र नेतृत्व गुणहरू विकास गरेको छ।"</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="testimonial-card">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="student.jpg" alt="Student" class="rounded-circle me-3" width="60">
-                            <div>
-                                <h5 class="mb-0">सुस्मिता श्रेष्ठ</h5>
-                                <p class="mb-0">कक्षा १० को विद्यार्थी</p>
-                            </div>
-                        </div>
-                        <p class="nepali-text">"म पाठशाला स्कूलमा पढ्दा धेरै रमाइलो गर्छु। शिक्षकहरू धेरै सहयोगी छन् र हामीलाई रचनात्मक रूपमा सिक्न प्रोत्साहन गर्छन्। क्लबहरू र बाह्य गतिविधिहरूले मेरो स्कूल जीवनलाई रोमाञ्चक बनाएको छ।"</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Career Section -->
-    <section id="career" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title">क्यारियर अवसरहरू</h2>
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <i class="fas fa-briefcase fa-3x text-primary mb-3"></i>
-                            <h3>पाठशाला स्कूलमा काम गर्नुहोस्</h3>
-                            <p class="nepali-text">हामी सधैं प्रतिभाशाली र समर्पित शिक्षकहरू र कर्मचारीहरूको खोजीमा छौं। यदि तपाइँ शिक्षामा passionate हुनुहुन्छ र हाम्रो मिशनसँग आफूलाई जोड्न चाहनुहुन्छ भने, हामीसँग जोडिनुहोस्।</p>
-                            <div class="mt-4">
-                                <h4>हालैका खुला पदहरू:</h4>
-                                <ul class="list-unstyled">
-                                    <li>➤ गणित शिक्षक (माध्यमिक स्तर)</li>
-                                    <li>➤ विज्ञान शिक्षक (प्राथमिक स्तर)</li>
-                                    <li>➤ प्रशासनिक सहायक</li>
-                                </ul>
-                            </div>
-                            <a href="#" class="btn btn-primary mt-3">क्यारियरको लागि आवेदन दिनुहोस्</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container">
-            <h2 class="section-title">हामीलाई सम्पर्क गर्नुहोस्</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h3>शाखा कार्यालयहरू</h3>
-                            <div class="mb-4">
-                                <h4>बaneshwor शाखा (काठमाडौं)</h4>
-                                <p><i class="fas fa-map-marker-alt me-2"></i> बaneshwor, काठमाडौं, नेपाल</p>
-                                <p><i class="fas fa-phone me-2"></i> ०१-४१२३४५६, ९८०१२३४५६७</p>
-                                <p><i class="fas fa-envelope me-2"></i> info@pathshala.edu.np</p>
-                            </div>
-                            <div>
-                                <h4>बाग्दोल शाखा (ललितपुर)</h4>
-                                <p><i class="fas fa-map-marker-alt me-2"></i> बाग्दोल, ललितपुर, नेपाल</p>
-                                <p><i class="fas fa-phone me-2"></i> ०१-५५४३२१०, ९८१２３４５６７８</p>
-                                <p><i class="fas fa-envelope me-2"></i> bagdol@pathshala.edu.np</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3>सम्पर्क फाराम</h3>
-                            <form>
-                                <div class="mb-3">
-                                    <input type="text" class="form-control" placeholder="तपाइँको नाम">
+            
+            <ul class="nav nav-tabs" id="resourcesTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="news-tab" data-bs-toggle="tab" data-bs-target="#news" type="button" role="tab">समाचार र सूचनाहरू</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="downloads-tab" data-bs-toggle="tab" data-bs-target="#downloads" type="button" role="tab">डाउनलोडहरू</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="publications-tab" data-bs-toggle="tab" data-bs-target="#publications" type="button" role="tab">प्रकाशनहरू</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="virtual-tab" data-bs-toggle="tab" data-bs-target="#virtual" type="button" role="tab">भर्चुअल टुर</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="resourcesTabContent">
+                <div class="tab-pane fade show active" id="news" role="tabpanel">
+                    <h4>हालका समाचार र सूचनाहरू</h4>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card news-card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">शीतकालीन अवकाश सूचना</h5>
+                                    <p class="card-text nepali-text">यस वर्षको शीतकालीन अवकाश माघ १० गतेदेखि फागुन ५ गतेसम्म रहनेछ। विद्यालय फागुन ६ गतेबाट नियमित रूपमा सञ्चालन हुनेछ।</p>
+                                    <p class="text-muted">प्रकाशित: पौष २५, २०८०</p>
                                 </div>
-                                <div class="mb-3">
-                                    <input type="email" class="form-control" placeholder="तपाइँको इमेल">
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card news-card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">वार्षिकोत्सव कार्यक्रम</h5>
+                                    <p class="card-text nepali-text">विद्यालयको २०औं वार्षिकोत्सव कार्यक्रम फागुन १५ गते आयोजना गरिनेछ। सबै अभिभावकहरूलाई निम्ता गरिएको छ।</p>
+                                    <p class="text-muted">प्रकाशित: पौष २०, २०८०</p>
                                 </div>
-                                <div class="mb-3">
-                                    <input type="tel" class="form-control" placeholder="तपाइँको फोन नम्बर">
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card news-card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">खेलकुद प्रतियोगिता</h5>
+                                    <p class="card-text nepali-text">वार्षिक खेलकुद प्रतियोगिता माघ १५-१७ गते आयोजना हुनेछ। सहभागीता जनाउन विद्यार्थीहरूले आफ्ना कक्षा शिक्षकलाई सूचना गर्नुपर्नेछ।</p>
+                                    <p class="text-muted">प्रकाशित: पौष १८, २०८०</p>
                                 </div>
-                                <div class="mb-3">
-                                    <textarea class="form-control" rows="4" placeholder="तपाइँको सन्देश"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card news-card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">मोडेल संयुक्त राष्ट्र संघ (MUN)</h5>
+                                    <p class="card-text nepali-text">हाम्रो विद्यालयले फागुनमा MUN कार्यक्रम आयोजना गर्दैछ। रुचि राख्ने विद्यार्थीहरूले विज्ञान विभागमा दर्ता गर्न सक्नुहुन्छ।</p>
+                                    <p class="text-muted">प्रकाशित: पौष १५, २०८०</p>
                                 </div>
-                                <button type="submit" class="btn btn-primary w-100">पठाउनुहोस्</button>
-                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="downloads" role="tabpanel">
+                    <h4>डाउनलोड गर्न योग्य फाइलहरू</h4>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-file-pdf fa-3x text-danger mb-3"></i>
+                                    <h5>विद्यालय प्रस्पेक्टस</h5>
+                                    <p class="nepali-text">हाम्रो विद्यालयको सम्पूर्ण जानकारी समावेश गरिएको प्रस्पेक्टस</p>
+                                    <a href="#" class="btn btn-outline-primary">डाउनलोड गर्नुहोस्</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-calendar-alt fa-3x text-primary mb-3"></i>
+                                    <h5>शैक्षिक क्यालेन्डर</h5>
+                                    <p class="nepali-text">२०८१ को लागि शैक्षिक क्यालेन्डर</p>
+                                    <a href="#" class="btn btn-outline-primary">डाउनलोड गर्नुहोस्</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-book fa-3x text-success mb-3"></i>
+                                    <h5>प्रि-युनि प्रोग्राम प्रस्पेक्टस</h5>
+                                    <p class="nepali-text">कक्षा ११ र १२ को लागि प्रि-युनि कार्यक्रमको विवरण</p>
+                                    <a href="#" class="btn btn-outline-primary">डाउनलोड गर्नुहोस्</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="publications" role="tabpanel">
+                    <h4>हाम्रा प्रकाशनहरू</h4>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <img src="newsletter.jpg" class="card-img-top" alt="समाचार पत्रिका">
+                                <div class="card-body">
+                                    <h5 class="card-title">समाचार पत्रिका</h5>
+                                    <p class="card-text nepali-text">हाम्रो नियमित समाचार पत्रिकाहरू डाउनलोड गर्नुहोस्</p>
+                                    <a href="#" class="btn btn-outline-primary">अवलोकन गर्नुहोस्</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <img src="calender.jpg" class="card-img-top" alt="पत्रिका">
+                                <div class="card-body">
+                                    <h5 class="card-title">भित्ता पत्रिका</h5>
+                                    <p class="card-text nepali-text">विद्यार्थीहरूद्वारा तयार गरिएका भित्ता पत्रिकाहरू</p>
+                                    <a href="#" class="btn btn-outline-primary">अवलोकन गर्नुहोस्</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <img src="publications.jpg" class="card-img-top" alt="प्रकाशन">
+                                <div class="card-body">
+                                    <h5 class="card-title">विद्यार्थी प्रकाशनहरू</h5>
+                                    <p class="card-text nepali-text">विद्यार्थी र शिक्षकहरूद्वारा तयार गरिएका
+                                        <div class="tab-pane fade" id="publications" role="tabpanel">
+    <h4>हाम्रा प्रकाशनहरू</h4>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="newsletter.jpg" class="card-img-top" alt="समाचार पत्रिका">
+                <div class="card-body">
+                    <h5 class="card-title">समाचार पत्रिका</h5>
+                    <p class="card-text nepali-text">हाम्रो नियमित समाचार पत्रिकाहरू डाउनलोड गर्नुहोस्</p>
+                    <a href="#" class="btn btn-outline-primary">अवलोकन गर्नुहोस्</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="calender.jpg" class="card-img-top" alt="पत्रिका">
+                <div class="card-body">
+                    <h5 class="card-title">भित्ता पत्रिका</h5>
+                    <p class="card-text nepali-text">विद्यार्थीहरूद्वारा तयार गरिएका भित्ता पत्रिकाहरू</p>
+                    <a href="#" class="btn btn-outline-primary">अवलोकन गर्नुहोस्</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="publications.jpg" class="card-img-top" alt="प्रकाशन">
+                <div class="card-body">
+                    <h5 class="card-title">विद्यार्थी प्रकाशनहरू</h5>
+                    <p class="card-text nepali-text">विद्यार्थी र शिक्षकहरूद्वारा तयार गरिएका प्रकाशनहरू</p>
+                    <a href="#" class="btn btn-outline-primary">अवलोकन गर्नुहोस्</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tab-pane fade" id="virtual" role="tabpanel">
+    <h4>भर्चुअल टुर</h4>
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-body text-center">
+                    <i class="fas fa-vr-cardboard fa-5x text-primary mb-4"></i>
+                    <h5>हाम्रो विद्यालयको भर्चुअल टुर</h5>
+                    <p class="nepali-text">हाम्रो विद्यालय परिसर, कक्षाकोठा, प्रयोगशाला, पुस्तकालय, र खेल मैदानहरूको भर्चुअल टुरमा स्वागत छ। तलको बटनमा क्लिक गरेर टुर सुरु गर्नुहोस्।</p>
+                    <a href="#" class="btn btn-primary btn-lg">भर्चुअल टुर सुरु गर्नुहोस्</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="py-5">
+    <div class="container">
+        <h2 class="section-title">ग्यालरी</h2>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 gallery-img">
+                <img src="image.jpg" alt="विद्यालयको बाह्य दृश्य" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-sm-6 gallery-img">
+                <img src="image1.jpg" alt="कक्षाकोठामा शिक्षण" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-sm-6 gallery-img">
+                <img src="image11.jpg" alt="विज्ञान प्रयोगशाला" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-sm-6 gallery-img">
+                <img src="image.jpg" alt="खेलकुद प्रतियोगिता" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-sm-6 gallery-img">
+                <img src="image11.jpg" alt="सांस्कृतिक कार्यक्रम" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-sm-6 gallery-img">
+                <img src="image1.jpg" alt="पुस्तकालय" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-sm-6 gallery-img">
+                <img src="image.jpg" alt="शिक्षकहरू" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-sm-6 gallery-img">
+                <img src="image11.jpg" alt="वार्षिकोत्सव" class="img-fluid">
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-primary">थप तस्वीरहरू हेर्नुहोस्</a>
+        </div>
+    </div>
+</section>
+
+<!-- Teachers Section -->
+<section id="teachers" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title">हाम्रा शिक्षकहरू</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="teacher-card card">
+                    <img src="teacher1.jpg" class="card-img-top" alt="गणित शिक्षक">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">डा. राम बहादुर</h4>
+                        <h6 class="text-primary">गणित विभाग प्रमुख</h6>
+                        <p class="card-text nepali-text">एम.एससी. (गणित), बि.एड., १५ वर्षे अनुभव</p>
+                        <p class="nepali-text">"गणित जीवनको भाषा हो। यसलाई रुचिकर बनाउनु नै मेरो लक्ष्य हो।"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="teacher-card card">
+                    <img src="teacher2.jpg" class="card-img-top" alt="विज्ञान शिक्षक">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">सुश्री सरला देवी</h4>
+                        <h6 class="text-primary">विज्ञान विभाग प्रमुख</h6>
+                        <p class="card-text nepali-text">एम.एससी. (रसायनशास्त्र), बि.एड., १२ वर्षे अनुभव</p>
+                        <p class="nepali-text">"विज्ञान विद्यार्थीहरूको जिज्ञासा बढाउने र वैज्ञानिक सोच विकास गर्ने कला हो।"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="teacher-card card">
+                    <img src="teacher3.jpg" class="card-img-top" alt="अङ्ग्रेजी शिक्षक">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">श्री जोन डो</h4>
+                        <h6 class="text-primary">अङ्ग्रेजी विभाग प्रमुख</h6>
+                        <p class="card-text nepali-text">एम.ए. (अङ्ग्रेजी), टिइएफएल, १० वर्षे अनुभव</p>
+                        <p class="nepali-text">"भाषा सिकाउँदा मनोरञ्जन र शिक्षा दुवै साथै हुनुपर्छ।"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="#" class="btn btn-primary">सबै शिक्षकहरू हेर्नुहोस्</a>
+        </div>
+    </div>
+</section>
+
+<!-- Career Section -->
+<section id="career" class="py-5">
+    <div class="container">
+        <h2 class="section-title">क्यारियर अवसर</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3>हामीसँग जोडिनुहोस्</h3>
+                        <p class="nepali-text">प्रभात माध्यमिक विद्यालयमा हामी सदैव प्रतिभाशाली र समर्पित शिक्षकहरूको खोजीमा छौं। यदि तपाईं शिक्षणमा उत्साही हुनुहुन्छ र विद्यार्थीहरूको जीवनमा परिवर्तन ल्याउन चाहनुहुन्छ भने, हामीसँग आवेदन दिनुहोस्।</p>
+                        
+                        <h4 class="mt-4">खुला पदहरू</h4>
+                        <div class="accordion" id="careerAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                        गणित शिक्षक (कक्षा ९-१२)
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#careerAccordion">
+                                    <div class="accordion-body">
+                                        <p><strong>आवश्यक योग्यता:</strong> एम.एससी. (गणित), बि.एड., कम्तिमा ५ वर्ष अनुभव</p>
+                                        <p><strong>कार्यहरू:</strong> कक्षा ९-१२ को गणित विषय पढाउने, पाठ्यक्रम विकास, विद्यार्थी मूल्याङ्कन</p>
+                                        <p><strong>आवेदन दिने अन्तिम मिति:</strong> माघ ३०, २०८०</p>
+                                        <a href="#" class="btn btn-sm btn-primary">आवेदन दिनुहोस्</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                        कम्प्युटर शिक्षक (कक्षा ६-१०)
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#careerAccordion">
+                                    <div class="accordion-body">
+                                        <p><strong>आवश्यक योग्यता:</strong> बि.एससी. (कम्प्युटर विज्ञान), बि.एड., कम्तिमा ३ वर्ष अनुभव</p>
+                                        <p><strong>कार्यहरू:</strong> कम्प्युटर शिक्षा, प्रोग्रामिंग कोर्स, ल्याब व्यवस्थापन</p>
+                                        <p><strong>आवेदन दिने अन्तिम मिति:</strong> माघ २५, २०८०</p>
+                                        <a href="#" class="btn btn-sm btn-primary">आवेदन दिनुहोस्</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3>आवेदन प्रक्रिया</h3>
+                        <ol class="nepali-text">
+                            <li>तपाईंको CV र आवश्यक कागजातहरूको प्रतिलिपि तयार गर्नुहोस्</li>
+                            <li>हाम्रो ईमेल careers@prabhat.edu.np मा आवेदन पठाउनुहोस्</li>
+                            <li>छनौट भएका उम्मेदवारहरूलाई अन्तर्वार्ताको लागि सम्पर्क गरिनेछ</li>
+                            <li>शिक्षण demo र लिखित परीक्षा</li>
+                            <li>अन्तिम छनौट र नियुक्ति</li>
+                        </ol>
+                        
+                        <h4 class="mt-4">कर्मचारी भत्ता र सुविधाहरू</h4>
+                        <ul class="nepali-text">
+                            <li>प्रतिस्पर्धी तलब</li>
+                            <li>स्वास्थ्य बीमा</li>
+                            <li>वार्षिक विदा</li>
+                            <li>पेशागत विकासको लागि अवसर</li>
+                            <li>आवास सुविधा (योग्यतानुसार)</li>
+                            <li>सेवानिवृत्ति लाभ</li>
+                        </ul>
+                        
+                        <div class="mt-4">
+                            <p><strong>ईमेल:</strong> careers@prabhat.edu.np</p>
+                            <p><strong>फोन:</strong> ९८०९८७६५४३, ०१-४१२३९८७</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h4>पाठशाला स्कूल</h4>
-                    <p>गुणस्तरीय शिक्षा प्रदान गर्दै २००४ देखि</p>
-                    <div>
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h4>त्वरित लिंकहरू</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="#home" class="text-white">गृहपृष्ठ</a></li>
-                        <li><a href="#about" class="text-white">हाम्रो बारेमा</a></li>
-                        <li><a href="#programs" class="text-white">कार्यक्रमहरू</a></li>
-                        <li><a href="#admissions" class="text-white">भर्ना</a></li>
-                        <li><a href="#contact" class="text-white">सम्पर्क</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h4>न्युजलिटर साइनअप</h4>
-                    <p>हाम्रो न्युजलिटरको लागि साइनअप गर्नुहोस्</p>
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="तपाइँको इमेल">
-                        <button class="btn btn-primary">साइनअप</button>
+<!-- Contact Section -->
+<section id="contact" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title">हामीलाई सम्पर्क गर्नुहोस्</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3>सम्पर्क जानकारी</h3>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> <strong>ठेगाना:</strong> बaneshwor, काठमाडौं, नेपाल</p>
+                        <p><i class="fas fa-phone me-2"></i> <strong>फोन:</strong> ०१-४१२३४५६, ९८०१२३४५६७</p>
+                        <p><i class="fas fa-envelope me-2"></i> <strong>ईमेल:</strong> info@prabhat.edu.np</p>
+                        <p><i class="fas fa-clock me-2"></i> <strong>कार्यसमय:</strong> सोम-शुक्र: १०:०० AM - ४:०० PM, शनि: १०:०० AM - १:०० PM</p>
+                        
+                        <div class="mt-4">
+                            <h4>सामाजिक सञ्जाल</h4>
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <hr class="mt-4 mb-4">
-            <div class="text-center">
-                <p>© २०२३ पाठशाला स्कूल. सर्वाधिकार सुरक्षित.</p>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>सम्पर्क फारम</h3>
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">नाम</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">ईमेल ठेगाना</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">फोन नम्बर</label>
+                                <input type="tel" class="form-control" id="phone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">विषय</label>
+                                <select class="form-select" id="subject">
+                                    <option selected>विषय छान्नुहोस्</option>
+                                    <option value="admission">भर्ना सम्बन्धी</option>
+                                    <option value="information">जानकारी</option>
+                                    <option value="complaint">गुनासो</option>
+                                    <option value="suggestion">सुझाव</option>
+                                    <option value="other">अन्य</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">सन्देश</label>
+                                <textarea class="form-control" id="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">पठाउनुहोस्</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Back to top button
-        const backToTopButton = document.querySelector('.back-to-top');
         
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.style.display = 'flex';
-            } else {
-                backToTopButton.style.display = 'none';
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-4">हाम्रो स्थान</h3>
+                        <div class="map-container" style="height: 400px; background-color: #eee; display: flex; align-items: center; justify-content: center;">
+                            <p class="text-center">[यहाँ गुगल म्याप हुनेछ]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <h5>प्रभात माध्यमिक विद्यालय</h5>
+                <p class="nepali-text">गुणस्तरीय शिक्षा, चरित्र निर्माण, र समग्र विकासको लागि समर्पित।</p>
+                <div class="mt-3">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2 mb-4">
+                <h5>त्वरित लिंकहरू</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#home" class="text-white">गृहपृष्ठ</a></li>
+                    <li><a href="#about" class="text-white">हाम्रो बारेमा</a></li>
+                    <li><a href="#programs" class="text-white">कार्यक्रमहरू</a></li>
+                    <li><a href="#admissions" class="text-white">भर्ना</a></li>
+                    <li><a href="#contact" class="text-white">सम्पर्क</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h5>सम्पर्क जानकारी</h5>
+                <p><i class="fas fa-map-marker-alt me-2"></i> बaneshwor, काठमाडौं, नेपाल</p>
+                <p><i class="fas fa-phone me-2"></i> ०१-४१२३४५६, ९८०१२३४५६७</p>
+                <p><i class="fas fa-envelope me-2"></i> info@prabhat.edu.np</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h5>न्युजलिटर सदस्यता</h5>
+                <p class="nepali-text">हाम्रो न्युजलिटरको लागि सदस्यता लिनुहोस् र अपडेट रहनुहोस्।</p>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" placeholder="तपाईंको ईमेल">
+                    <button class="btn btn-primary" type="button">सदस्यता लिनुहोस्</button>
+                </div>
+            </div>
+        </div>
+        <hr class="bg-light">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="mb-0">© २०८० प्रभात माध्यमिक विद्यालय. सर्वाधिकार सुरक्षित.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="#" class="text-white me-3">गोपनीयता नीति</a>
+                <a href="#" class="text-white">सेवा सर्तहरू</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Back to top button functionality
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+    
+    backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         });
-        
-        backToTopButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
+    });
+</script>
 </body>
 </html>
