@@ -231,14 +231,20 @@
     </style>
 </head>
 <body>
-      <body>
     <!-- Header with gif.gif and site.svg added -->
-    <div class="flex items-center justify-center gap-4 my-4 flex-wrap">
-        <img src="gif.gif" alt="Nepali Flag" class="h-16 md:h-12">
-        <h1 class="text-2xl md:text-xl font-bold text-center">प्रभात माध्यमिक विद्यालय</h1>
-        <img src="site.svg" alt="National Emblem" class="h-16 md:h-12">
+    <div class="d-flex justify-content-center align-items-center gap-3 my-4 flex-wrap">
+        <img src="gif.gif" alt="Nepali Flag" class="img-fluid" style="height:60px;">
+        <h1 class="text-center fw-bold">प्रभात माध्यमिक विद्यालय</h1>
+        <img src="site.svg" alt="National Emblem" class="img-fluid" style="height:60px;">
     </div>
-    
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: var(--primary-color);">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="site.svg" alt="Logo">
+                प्रभात माध्यमिक विद्यालय
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
