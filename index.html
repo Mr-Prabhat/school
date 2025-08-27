@@ -419,46 +419,42 @@
         </div>
     </section>
 
- <!-- About Us Section - Revamped -->
-<section id="about" style="position: relative; background: linear-gradient(135deg, rgba(255,0,100,0.6), rgba(255,200,0,0.6)), url('image1.jpg'); background-size: cover; background-position: center; color: white; overflow: hidden; padding: 100px 0;">
-    <!-- Animated Floating Shapes -->
-    <div class="floating-shapes">
-        <div class="shape shape1"></div>
-        <div class="shape shape2"></div>
-        <div class="shape shape3"></div>
-    </div>
+<!-- About Us Section - Professional Version -->
+<section id="about" style="position: relative; background: url('image1.jpg'); background-size: cover; background-position: center; color: #f0f0f0; padding: 100px 0; overflow: hidden;">
+    <!-- Overlay for dark professional effect -->
+    <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,50,0.65); z-index:1;"></div>
 
-    <div class="container">
-        <h2 class="text-center mb-5" style="font-size: 3rem; font-weight: 800; text-transform: uppercase; text-shadow: 2px 2px 15px rgba(0,0,0,0.7);">हाम्रो बारेमा</h2>
+    <div class="container" style="position: relative; z-index:2;">
+        <h2 class="text-center mb-5" style="font-size: 3rem; font-weight: 700; color: #ffd700; text-shadow: 1px 1px 5px rgba(0,0,0,0.7);">हाम्रो बारेमा</h2>
         <div class="row g-5">
             <!-- Card 1 -->
             <div class="col-md-6">
-                <div class="about-card glass-card p-5 text-center">
+                <div class="glass-card p-5 text-center" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: transform 0.5s, box-shadow 0.5s;">
                     <div class="icon mb-4">
-                        <i class="fa-solid fa-graduation-cap fa-4x text-gradient"></i>
+                        <i class="fa-solid fa-graduation-cap fa-3x" style="color: #ffd700;"></i>
                     </div>
-                    <h3 class="mb-3" style="font-weight: 700; font-size: 1.8rem;">२० वर्षे शैक्षिक यात्रा</h3>
-                    <p style="font-size: 1.15rem; line-height: 1.9;">
+                    <h3 class="mb-3" style="font-weight: 600; font-size: 1.75rem; color:#ffd700;">२० वर्षे शैक्षिक यात्रा</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color:#f0f0f0;">
                         प्रभात माध्यमिक विद्यालयले सन् २००४ मा शिक्षाको क्षेत्रमा आफ्नो यात्रा सुरु गरेको थियो। 
                         हाम्रो लक्ष्य विद्यार्थीहरूलाई जिज्ञासा, दया, ज्ञान, आत्मनिरीक्षण, र आत्मनिर्भरताको मूल्यहरूसाथ शिक्षा प्रदान गर्नु हो।
                     </p>
-                    <p style="font-size: 1.15rem; line-height: 1.9;">
+                    <p style="font-size: 1.1rem; line-height: 1.8; color:#f0f0f0;">
                         हामीले २०+ वर्ष सेवा, ५०००+ स्नातक, र २२०+ कर्मचारीहरूको उपलब्धि हासिल गरेका छौं।
                     </p>
                 </div>
             </div>
             <!-- Card 2 -->
             <div class="col-md-6">
-                <div class="about-card glass-card p-5 text-center">
+                <div class="glass-card p-5 text-center" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: transform 0.5s, box-shadow 0.5s;">
                     <div class="icon mb-4">
-                        <i class="fa-solid fa-history fa-4x text-gradient"></i>
+                        <i class="fa-solid fa-history fa-3x" style="color: #ffd700;"></i>
                     </div>
-                    <h3 class="mb-3" style="font-weight: 700; font-size: 1.8rem;">हाम्रो दर्शन र इतिहास</h3>
-                    <p style="font-size: 1.15rem; line-height: 1.9;">
+                    <h3 class="mb-3" style="font-weight: 600; font-size: 1.75rem; color:#ffd700;">हाम्रो दर्शन र इतिहास</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color:#f0f0f0;">
                         हामी विद्यार्थी केन्द्रित शिक्षामा विश्वास गर्छौं जसले जीवनभरिको सिक्ने प्रक्रियालाई बढावा दिन्छ। 
                         हाम्रो दर्शन जिज्ञासा, दया, ज्ञान, आत्मनिरीक्षण, र आत्मनिर्भरतामा आधारित छ।
                     </p>
-                    <p style="font-size: 1.15rem; line-height: 1.9;">
+                    <p style="font-size: 1.1rem; line-height: 1.8; color:#f0f0f0;">
                         हाम्रो इतिहास विद्यालयले समुदायलाई गुणस्तरीय शिक्षा प्रदान गर्ने २० वर्षे समर्पणको कथा हो।
                     </p>
                 </div>
@@ -467,41 +463,11 @@
     </div>
 </section>
 
+<!-- Hover Animation -->
 <style>
-/* Glass Card */
-.glass-card {
-    background: rgba(255,255,255,0.05);
-    border-radius: 20px;
-    backdrop-filter: blur(15px);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-    transition: transform 0.6s, box-shadow 0.6s;
-}
 .glass-card:hover {
-    transform: translateY(-20px) scale(1.03);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.7);
-}
-
-/* Gradient Text for Icons */
-.text-gradient {
-    background: linear-gradient(45deg, #ff00cc, #ffdd00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* Floating Shapes */
-.floating-shapes .shape {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.3;
-    animation: float 10s infinite ease-in-out;
-}
-.shape1 { width: 120px; height: 120px; background: #ff007f; top: 10%; left: 5%; }
-.shape2 { width: 80px; height: 80px; background: #ffdd00; bottom: 15%; right: 10%; }
-.shape3 { width: 100px; height: 100px; background: #ff3f8f; top: 50%; right: 20%; }
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px) translateX(0px); }
-    50% { transform: translateY(-30px) translateX(20px); }
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 </style>
 
